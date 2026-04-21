@@ -1,0 +1,176 @@
+:root {
+  --clr-blue-200: hsl(193, 38%, 86%);
+  --clr-green-300: hsl(150, 100%, 66%);
+  --clr-blue-600: hsl(217, 19%, 38%);
+  --clr-blue-900: hsl(217, 19%, 24%);
+  --clr-blue-950: hsl(218, 23%, 16%);
+
+  --ff-base: "Manrope", system-ui, sans-serif;
+  --fw-extrabold: 800;
+
+  --fs-quote: 1.5rem;
+  --fs-quote-desktop: 1.75rem;
+  --fs-label: 0.6875rem;
+
+  --radius-card: 0.9375rem;
+  --shadow-glow: 0 0 40px var(--clr-green-300);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2.5rem;
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--clr-blue-200);
+  background-color: var(--clr-blue-950);
+  text-align: center;
+  line-height: 1.4;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 33.75rem;
+  margin: 0;
+  padding: 2.75rem 1.75rem 4rem;
+
+  background-color: var(--clr-blue-900);
+  border-radius: var(--radius-card);
+  box-shadow: 0 25px 40px hsl(218, 23%, 10%, 0.35);
+}
+
+.card__label {
+  margin: 0 0 1.5rem;
+  color: var(--clr-green-300);
+  font-size: var(--fs-label);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.card__quote {
+  margin: 0 0 1.75rem;
+  quotes: "\201C" "\201D";
+}
+
+.card__quote p {
+  margin: 0;
+  font-size: var(--fs-quote);
+  line-height: 1.3;
+}
+
+.card__quote p::before {
+  content: open-quote;
+}
+
+.card__quote p::after {
+  content: close-quote;
+}
+
+.card__divider {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+.card__divider img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.card__dice {
+  position: absolute;
+  left: 50%;
+  bottom: -2rem;
+  transform: translateX(-50%);
+
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--clr-green-300);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.card__dice img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.card__dice:hover,
+.card__dice:focus-visible {
+  box-shadow: var(--shadow-glow);
+  outline: none;
+}
+
+.card__dice:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+.card.cargando .card__quote p {
+  opacity: 0.6;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  color: var(--clr-blue-200);
+  font-weight: 400;
+}
+
+.attribution a {
+  color: var(--clr-green-300);
+  text-decoration: none;
+}
+
+.attribution a:hover,
+.attribution a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    padding: 3rem 3rem 4.5rem;
+  }
+
+  .card__quote p {
+    font-size: var(--fs-quote-desktop);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__dice {
+    transition: none;
+  }
+}

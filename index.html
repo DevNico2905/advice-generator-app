@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Generador de consejos</title>
+</head>
+
+<body>
+  <main>
+    <article class="card" aria-live="polite">
+      <p class="card__label">
+        Consejo #<span class="card__id" data-advice-id>...</span>
+      </p>
+
+      <blockquote class="card__quote">
+        <p data-advice-text>Haz clic en los dados para obtener tu primer consejo.</p>
+      </blockquote>
+
+      <picture class="card__divider">
+        <source media="(min-width: 40rem)" srcset="./images/pattern-divider-desktop.svg">
+        <img src="./images/pattern-divider-mobile.svg" alt="">
+      </picture>
+
+      <button class="card__dice" type="button" aria-label="Generate new advice" data-advice-button>
+        <img src="./images/icon-dice.svg" alt="" aria-hidden="true">
+      </button>
+    </article>
+  </main>
+
+  <footer class="attribution">
+    Reto creado por <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend
+      Mentor</a>.
+    Desarrollado por <a href="https://github.com/DevNico2905" target="_blank" rel="noopener">Nick Bern</a>.
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
